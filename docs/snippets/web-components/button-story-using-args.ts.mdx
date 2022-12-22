@@ -1,9 +1,10 @@
-```js
-// demo-button.stories.js
+```ts
+// demo-button.stories.ts
+import type { Meta, StoryObj } from '@storybook/web-components';
 
-import { Button } from './demo-button';
+import { Button, ButtonProps } from './demo-button';
 
-export default {
+const meta: Meta<ButtonProps> = {
   /* 👇 The title prop is optional.
    * See https://storybook.js.org/docs/7.0/web-components/configure/overview#configure-story-loading
    * to learn how to generate automatic titles
@@ -16,22 +17,25 @@ export default {
    */
   render: (args) => Button(args),
 };
+export default meta;
 
-export const Primary = {
+type Story<ButtonProps> = StoryObj;
+
+export const Primary: Story = {
   args: {
     background: '#ff0',
     label: 'Button',
   },
 };
 
-export const Secondary = {
+export const Secondary: Story = {
   args: {
     ...Primary.args,
     label: '😄👍😍💯',
   },
 };
 
-export const Tertiary = {
+export const Tertiary: Story = {
   args: {
     ...Primary.args,
     label: '📚📕📈🤓',

@@ -1,12 +1,13 @@
-```js
-// demo-button-group.stories.js
+```ts
+// demo-button-group.stories.ts
+import type { Meta, StoryObj } from '@storybook/web-components';
 
-import { ButtonGroup } from './demo-button-group';
+import { ButtonGroup, ButtonGroupProps } from './demo-button-group';
 
 //👇 Imports the Button stories
 import * as ButtonStories from './demo-button.stories';
 
-export default {
+const meta: Meta<ButtonGroupProps> = {
   /* 👇 The title prop is optional.
    * See https://storybook.js.org/docs/7.0/web-components/configure/overview#configure-story-loading
    * to learn how to generate automatic titles
@@ -19,8 +20,11 @@ export default {
    */
   render: (args) => ButtonGroup(args),
 };
+export default meta;
 
-export const Pair = {
+type Story<ButtonGroupProps> = StoryObj;
+
+export const Pair: Story = {
   args: {
     buttons: [{ ...ButtonStories.Primary.args }, { ...ButtonStories.Secondary.args }],
     orientation: 'horizontal',
