@@ -1,28 +1,20 @@
 ```ts
-// demo-button-group.stories.ts
+// ButtonGroup.stories.ts
 import type { Meta, StoryObj } from '@storybook/web-components';
 
-import { ButtonGroup, ButtonGroupProps } from './demo-button-group';
+import type { ButtonGroupProps } from './ButtonGroup';
+import { ButtonGroup } from './ButtonGroup';
 
-//👇 Imports the Button stories
-import * as ButtonStories from './demo-button.stories';
+// 👇 Imports the Button stories
+import * as ButtonStories from './Button.stories';
 
 const meta: Meta<ButtonGroupProps> = {
-  /* 👇 The title prop is optional.
-   * See https://storybook.js.org/docs/7.0/web-components/configure/overview#configure-story-loading
-   * to learn how to generate automatic titles
-   */
   title: 'ButtonGroup',
-  /*
-   *👇 Render functions are a framework specific feature to allow you control on how the component renders.
-   * See https://storybook.js.org/docs/7.0/web-components/api/csf
-   * to learn how to use render functions.
-   */
   render: (args) => ButtonGroup(args),
 };
 export default meta;
 
-type Story<ButtonGroupProps> = StoryObj;
+type Story = StoryObj<ButtonGroupProps>;
 
 export const Pair: Story = {
   args: {

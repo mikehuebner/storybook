@@ -1,28 +1,20 @@
 ```ts
-// your-component.stories.ts
+// YourComponent.stories.ts
 import type { Meta, StoryObj } from '@storybook/web-components';
 
-import { YourComponent, YourComponentProps } from './your-component';
+import type { YourComponentProps } from './YourComponent';
+import { YourComponent } from './YourComponent';
 
 // This default export determines where your story goes in the story list
 const meta: Meta<YourComponentProps> = {
-  /* 👇 The title prop is optional.
-   * See https://storybook.js.org/docs/7.0/web-components/configure/overview#configure-story-loading
-   * to learn how to generate automatic titles
-   */
   title: 'YourComponent',
+  render: (args) => YourComponent(args),
 };
 export default meta;
 
-type Story<YourComponentProps> = StoryObj;
+type Story = StoryObj<YourComponentProps>;
 
-/*
- *👇 Render functions are a framework specific feature to allow you control on how the component renders.
- * See https://storybook.js.org/docs/7.0/web-components/api/csf
- * to learn how to use render functions.
- */
 export const FirstStory: Story = {
-  render: (args) => MyComponent(args),
   args: {
     //👇 The args you need here will depend on your component
   },

@@ -1,14 +1,11 @@
 ```ts
-// demo-button.stories.ts
+// Button.stories.ts
 import type { Meta } from '@storybook/web-components';
 
-import { Button, ButtonProps } from './demo-button';
+import type { ButtonProps } from './Button';
+import { Button } from './Button';
 
 const meta: Meta<ButtonProps> = {
-  /* 👇 The title prop is optional.
-   * See https://storybook.js.org/docs/7.0/web-components/configure/overview#configure-story-loading
-   * to learn how to generate automatic titles
-   */
   title: 'Button',
   //👇 Creates specific parameters for the story
   parameters: {

@@ -1,27 +1,19 @@
 ```ts
-// demo-button.stories.ts
+// Button.stories.ts
 import type { Meta, StoryObj } from '@storybook/web-components';
 
-import { Button, ButtonProps } from './demo-button';
+import type { ButtonProps } from './Button';
+import { Button } from './Button';
 
 const meta: Meta<ButtonProps> = {
-  /* 👇 The title prop is optional.
-   * See https://storybook.js.org/docs/7.0/web-components/configure/overview#configure-story-loading
-   * to learn how to generate automatic titles
-   */
   title: 'Button',
+  render: (args) => Button(args),
 };
 export default meta;
 
-type Story<ButtonProps> = StoryObj;
+type Story = StoryObj<ButtonProps>;
 
-/*
- *👇 Render functions are a framework specific feature to allow you control on how the component renders.
- * See https://storybook.js.org/docs/7.0/web-components/api/csf
- * to learn how to use render functions.
- */
 export const Primary: Story = {
-  render: (args) => Button(args),
   args: {
     primary: true,
     label: 'Button',
