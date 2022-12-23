@@ -1,9 +1,11 @@
 ```js
 // Button.stories.js
+import type { Meta, StoryObj } from '@storybook/web-components';
 
+import type { ButtonProps } from './Button';
 import { Button } from './Button';
 
-export default {
+const meta: Meta<ButtonProps> = {
   title: 'Button',
   render: (args) => Button(args),
   //👇 Creates specific argTypes
@@ -15,4 +17,5 @@ export default {
     primary: true,
   },
 };
+export default meta;
 ```

@@ -1,0 +1,15 @@
+```ts
+// YourComponent.stories.ts
+import { html } from 'lit-html';
+
+import type { Meta, StoryObj } from '@storybook/web-components';
+
+import type { YourComponentProps } from './YourComponent';
+import { YourComponent } from './YourComponent';
+
+const meta: Meta<YourComponentProps> = {
+  title: 'YourComponent',
+  decorators: [(story) => html`<div style="margin: 3em">${story()}</div>`],
+};
+export default meta;
+```

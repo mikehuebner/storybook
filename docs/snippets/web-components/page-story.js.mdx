@@ -1,0 +1,19 @@
+```js
+// Page.stories.js
+
+import { Page } from './Page';
+
+// 👇 Imports all Header stories
+import * as HeaderStories from './Header.stories';
+
+export default {
+  title: 'Page',
+  render: (args) => Page(args),
+};
+
+export const LoggedIn = {
+  args: {
+    ...HeaderStories.LoggedIn.args,
+  },
+};
+```
