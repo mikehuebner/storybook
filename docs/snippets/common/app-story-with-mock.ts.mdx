@@ -1,20 +1,17 @@
-```tsx
+```ts
 // App.stories.ts|tsx
 
-import type { Meta, StoryObj } from '@storybook/react';
+// Replace your-framework with the name of your framework
+import type { Meta, StoryObj } from '@storybook/your-framework';
 
 import App from './App';
 
 const meta: Meta<typeof App> = {
-  /* 👇 The title prop is optional.
-   * See https://storybook.js.org/docs/7.0/react/configure/overview#configure-story-loading
-   * to learn how to generate automatic titles
-   */
   title: 'App',
   component: App,
 };
-
 export default meta;
+
 type Story = StoryObj<typeof App>;
 
 export const Success: Story = {
